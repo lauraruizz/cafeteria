@@ -1,0 +1,20 @@
+Bebidas Quentes:
+Café Expresso: Chocolate Quente: Matcha Latte.
+
+Bebidas Geladas:
+Milk-shake: Sucos Naturais: Refrigerantes.
+
+Padaria e Confeitaria:
+Bolo de cenoura: Donuts: Sonho.
+
+Lanches Salgados:
+Misto quente: Esfihas: Sanduiches naturais.
+
+Sobremesas:
+Pudim: Mousse: Tortas especiais.
+
+Opções Saudáveis:
+Tapioca, Produto sem lactose: Salada de fruta.
+
+Produtos para Venda:
+Cápsula de café: Canecas personalizadas: Geleias artesanais.
