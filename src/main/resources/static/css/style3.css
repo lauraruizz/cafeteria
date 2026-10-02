@@ -435,6 +435,7 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
+
 @keyframes pulse {
 
     0%,
@@ -690,3 +691,4 @@ footer small {
         font-size: 1.1rem;
     }
 }
+

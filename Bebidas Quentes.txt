@@ -14,4 +14,7 @@ Sobremesas:
 Pudim: Mousse: Tortas especiais.
 
 Opções Saudáveis:
-Tapioca, Produto sem lactose
+Tapioca, Produto sem lactose: Salada de fruta.
+
+Produtos para Venda:
+Cápsula de café: Canecas personalizadas: Geleias artesanais.
