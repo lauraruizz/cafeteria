@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faça seu pedido na Cafeteria da Lau — cafés especiais, doces artesanais e momentos acolhedores.">
+    <title>Pedidos - Cafeteria da Lau</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style3.css">
+    
+    
+</head>
+
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index3.html">☕ Cafeteria da Lau</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index3.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index3.html#produtos">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="pedidos.html">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#carrinho">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="badge bg-coffee" id="carrinho-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO -->
+        <section class="pedidos-hero">
+            <div class="container">
+                <h1>Faça seu Pedido</h1>
+                <p>Escolha seus cafés e doces favoritos e aproveite entrega rápida com muito carinho</p>
+            </div>
+        </section>
+
+        <!-- CONTAINER PRINCIPAL -->
+        <div class="container pedidos-container">
+            <div class="row g-4">
+                <!-- COLUNA DE PRODUTOS -->
+                <div class="col-lg-8">
+                    <!-- FILTROS -->
+                    <div class="filtros-section mb-5">
+                        <h3 class="mb-3">Filtrar por Categoria</h3>
+                        <div class="filtros-buttons">
+                            <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                            <button class="filtro-btn" data-filtro="cafes">Cafés</button>
+                            <button class="filtro-btn" data-filtro="doces">Doces</button>
+                            <button class="filtro-btn" data-filtro="complementos">Complementos</button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUTOS -->
+                    <div class="produtos-grid" id="produtos-grid">
+                        
+                        <!-- CAFÉS -->
+                        <div class="produto-item" data-categoria="cafes">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Cappuccino Cremoso">
+                                    <span class="categoria-badge">Café</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Cappuccino Cremoso</h4>
+                                    <p>Café espresso, leite vaporizado e camada cremosa de espuma.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 12,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Cappuccino Cremoso', 12.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="cafes">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=500&q=80" alt="Espresso da Lau">
+                                    <span class="categoria-badge">Café</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Espresso da Lau</h4>
+                                    <p>Intenso, aromático e preparado com grãos selecionados.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 8,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Espresso da Lau', 8.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="cafes">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Latte Especial">
+                                    <span class="categoria-badge">Café</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Latte Especial</h4>
+                                    <p>Leve, aveludado e com um toque especial de canela.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 14,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Latte Especial', 14.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="cafes">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=500&q=80" alt="Americano">
+                                    <span class="categoria-badge">Café</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Americano</h4>
+                                    <p>Clássico café americano, suave e refrescante.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 7,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Americano', 7.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DOCES -->
+                        <div class="produto-item" data-categoria="doces">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80" alt="Doces Artesanais">
+                                    <span class="categoria-badge">Doce</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Doces Artesanais</h4>
+                                    <p>Delícias preparadas artesanalmente para acompanhar seu café.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 9,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Doces Artesanais', 9.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="doces">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Brownie de Chocolate">
+                                    <span class="categoria-badge">Doce</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Brownie de Chocolate</h4>
+                                    <p>Brownie denso e delicioso, perfeito para os amantes de chocolate.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 10,90</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Brownie de Chocolate', 10.90)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="doces">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1586985289688-cacf604ba2e0?auto=format&fit=crop&w=500&q=80" alt="Croissant de Amêndoa">
+                                    <span class="categoria-badge">Doce</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Croissant de Amêndoa</h4>
+                                    <p>Croissant crocante com generosa cobertura de amêndoa.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 8,50</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Croissant de Amêndoa', 8.50)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COMPLEMENTOS -->
+                        <div class="produto-item" data-categoria="complementos">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291840?auto=format&fit=crop&w=500&q=80" alt="Leite Integral">
+                                    <span class="categoria-badge">Complemento</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Extra de Leite</h4>
+                                    <p>Adicionar leite integral extra à sua bebida.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 2,00</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Extra de Leite', 2.00)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="complementos">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd93d80?auto=format&fit=crop&w=500&q=80" alt="Calda de Chocolate">
+                                    <span class="categoria-badge">Complemento</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Calda de Chocolate</h4>
+                                    <p>Calda de chocolate premium para adoçar sua bebida.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 1,50</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Calda de Chocolate', 1.50)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-item" data-categoria="complementos">
+                            <div class="produto-card">
+                                <div class="produto-imagem">
+                                    <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd93d80?auto=format&fit=crop&w=500&q=80" alt="Calda de Caramelo">
+                                    <span class="categoria-badge">Complemento</span>
+                                </div>
+                                <div class="produto-info">
+                                    <h4>Calda de Caramelo</h4>
+                                    <p>Calda de caramelo gourmet para um toque especial.</p>
+                                    <div class="produto-footer">
+                                        <span class="produto-preco">R$ 1,50</span>
+                                        <div class="quantidade-selector">
+                                            <button class="qty-btn" onclick="decrementarQtd(this)">-</button>
+                                            <input type="number" class="qty-input" value="1" min="1">
+                                            <button class="qty-btn" onclick="incrementarQtd(this)">+</button>
+                                        </div>
+                                        <button class="btn-adicionar" onclick="adicionarAoCarrinho(this, 'Calda de Caramelo', 1.50)">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- COLUNA DO CARRINHO -->
+                <div class="col-lg-4">
+                    <div class="carrinho-section" id="carrinho">
+                        <div class="carrinho-header">
+                            <h3><i class="fas fa-shopping-cart"></i> Seu Pedido</h3>
+                            <button class="btn-limpar" onclick="limparCarrinho()">Limpar</button>
+                        </div>
+
+                        <div class="carrinho-items" id="carrinho-items">
+                            <div class="carrinho-vazio">
+                                <i class="fas fa-inbox"></i>
+                                <p>Seu carrinho está vazio</p>
+                                <small>Adicione produtos para começar seu pedido</small>
+                            </div>
+                        </div>
+
+                        <div class="carrinho-resumo" id="carrinho-resumo" style="display: none;">
+                            <div class="resumo-item">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">R$ 0,00</span>
+                            </div>
+                            <div class="resumo-item">
+                                <span>Taxa de Entrega:</span>
+                                <span id="taxa-entrega">R$ 5,00</span>
+                            </div>
+                            <div class="resumo-item total">
+                                <span>Total:</span>
+                                <span id="total">R$ 0,00</span>
+                            </div>
+
+                            <div class="observacoes-section">
+                                <label for="observacoes">Observações especiais:</label>
+                                <textarea id="observacoes" placeholder="Ex: sem açúcar, sem leite..."></textarea>
+                            </div>
+
+                            <div class="entrega-section">
+                                <label>Tipo de Entrega:</label>
+                                <div class="entrega-options">
+                                    <label class="radio-label">
+                                        <input type="radio" name="entrega" value="delivery" checked>
+                                        <span>Entrega em Casa</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="entrega" value="retirada">
+                                        <span>Retirar na Loja</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-coffee btn-block" onclick="finalizarPedido()">
+                                <i class="fas fa-check"></i> Finalizar Pedido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>☕ Cafeteria da Lau</p>
+            <small>Um café feito com carinho para você.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./static/js/pedidos.js"></script>
+</body>
+
+</html>

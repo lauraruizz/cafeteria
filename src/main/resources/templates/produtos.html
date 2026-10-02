@@ -6,198 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Cafeteria da Lau</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --purple-dark: #2b1636;
-            --purple-main: #5a2d7f;
-            --purple: #6a3c80;
-            --purple-soft: #efe3f6;
-            --purple-light: #f7eff9;
-            --brown: #5c3d30;
-            --brown-light: #a57a63;
-            --text: #2a1d20;
-            --muted: #5c4a4d;
-            --white: #fff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background: linear-gradient(135deg, #f8f3f7 0%, #f0e3f4 100%);
-            font-family: "Segoe UI", Tahoma, sans-serif;
-            color: var(--text);
-        }
-
-        .navbar {
-            background: linear-gradient(90deg, var(--purple-dark), var(--brown), var(--purple-main));
-            box-shadow: 0 6px 18px rgba(43, 22, 54, 0.18);
-        }
-
-        .navbar-brand {
-            color: #fff !important;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9) !important;
-            font-weight: 600;
-            transition: 0.2s ease;
-        }
-
-        .nav-link:hover {
-            color: #f4d7ff !important;
-        }
-
-        .produto-header {
-            background: linear-gradient(135deg, #f4ebf8, #efe1f5);
-            padding: 90px 20px 60px;
-            text-align: center;
-            border-bottom: 1px solid rgba(43, 22, 54, 0.08);
-        }
-
-        .produto-header h1 {
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            color: var(--purple-dark);
-            margin: 0;
-        }
-
-        .produto-header p {
-            margin: 16px auto 0;
-            max-width: 700px;
-            color: var(--muted);
-            font-size: 1.08rem;
-        }
-
-        .filtros {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 24px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(43, 22, 54, 0.08);
-        }
-
-        .btn-filtro {
-            background: rgba(255, 255, 255, 0.7);
-            color: var(--purple-dark);
-            border: 1px solid rgba(106, 60, 128, 0.15);
-            border-radius: 30px;
-            padding: 10px 18px;
-            margin: 5px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .btn-filtro.active,
-        .btn-filtro:hover {
-            background: linear-gradient(135deg, var(--purple), var(--purple-main));
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 8px 18px rgba(106, 60, 128, 0.2);
-        }
-
-        .container-produtos {
-            padding: 60px 20px 80px;
-        }
-
-        .card-produto {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(106, 60, 128, 0.12);
-            border-radius: 22px;
-            overflow: hidden;
-            transition: 0.25s ease;
-            box-shadow: 0 8px 24px rgba(43, 22, 54, 0.08);
-            height: 100%;
-        }
-
-        .card-produto:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 36px rgba(106, 60, 128, 0.18);
-        }
-
-        .card-produto img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .categoria {
-            color: var(--purple-main);
-            font-size: 0.78rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 8px;
-        }
-
-        .titulo-produto {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--purple-dark);
-            margin-bottom: 12px;
-        }
-
-        .descricao {
-            color: var(--muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .rodape {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .preco {
-            font-size: 1.45rem;
-            font-weight: 800;
-            color: var(--purple-main);
-        }
-
-        .btn-add {
-            background: linear-gradient(135deg, var(--purple), var(--purple-main));
-            color: #fff;
-            border: none;
-            border-radius: 999px;
-            padding: 10px 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .btn-add:hover {
-            background: linear-gradient(135deg, var(--purple-main), var(--purple));
-        }
-
-        footer {
-            background: linear-gradient(90deg, var(--purple-dark), var(--brown), var(--purple-main));
-            color: #fff;
-            padding: 28px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/style3.css">
+    <link rel="stylesheet" href="../static/css/produtos.css">
 </head>
 
 <body>
@@ -231,7 +41,8 @@
             <button class="btn-filtro" data-filter="cafes">Cafés</button>
             <button class="btn-filtro" data-filter="bebidas">Bebidas</button>
             <button class="btn-filtro" data-filter="doces">Doces</button>
-            <button class="btn-filtro" data-filter="comidas">Comidas</button>
+            <button class="btn-filtro" data-filter="salgados">Salgados</button>
+            <button class="btn-filtro" data-filter="presentes">Presentes</button>
         </div>
     </section>
 
@@ -244,42 +55,40 @@
                             alt="Cappuccino">
                         <div class="card-body">
                             <div class="categoria">Café</div>
-                            <h3 class="titulo-produto">Cappuccino Cremoso</h3>
+                            <h3 class="titulo-produto">Café da Lau</h3>
                             <p class="descricao">Café espresso com leite vaporizado e uma camada cremosa de espuma.</p>
                             <div class="rodape">
-                                <span class="preco">R$ 12,90</span>
+                                <span class="preco">R$ 6,90</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80"
-                            alt="Espresso">
+                        <img src="../static/img/chocolate-quente.jpg" alt="Espresso">
                         <div class="card-body">
-                            <div class="categoria">Café</div>
-                            <h3 class="titulo-produto">Espresso da Lau</h3>
-                            <p class="descricao">Intenso, aromático e preparado com grãos selecionados para um sabor
-                                marcante.</p>
+                            <div class="categoria">Bebidas</div>
+                            <h3 class="titulo-produto">Chocolate Quente da Lau</h3>
+                            <p class="descricao">Chocolate quente cremoso e aveludado, com sabor intenso de chocolate e
+                                um toque aconchegante de doçura.</p>
                             <div class="rodape">
-                                <span class="preco">R$ 8,90</span>
+                                <span class="preco">R$ 9,90</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=80"
-                            alt="Latte">
+                        <img src="../static/img/matcha-latte.jpg" alt="Latte">
                         <div class="card-body">
-                            <div class="categoria">Café</div>
+                            <div class="categoria">Bebidas</div>
                             <h3 class="titulo-produto">Latte Especial</h3>
-                            <p class="descricao">Leve, aveludado e com um toque especial de canela para um sabor
-                                delicado.</p>
+                            <p class="descricao">Matcha Latte cremoso e delicado, com o sabor marcante do chá verde
+                                japonês equilibrado pela suavidade do leite.</p>
                             <div class="rodape">
                                 <span class="preco">R$ 14,90</span>
                                 <button class="btn-add">Adicionar</button>
@@ -290,15 +99,14 @@
 
                 <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=900&q=80"
-                            alt="Chocolate Quente">
+                        <img src="../static/img/milk-shake.jpg" alt="Milk Shake">
                         <div class="card-body">
-                            <div class="categoria">Bebida</div>
-                            <h3 class="titulo-produto">Chocolate Quente</h3>
-                            <p class="descricao">Uma bebida cremosa e irresistível, com chocolate premium e leite bem
-                                aromático.</p>
+                            <div class="categoria">Bebidas</div>
+                            <h3 class="titulo-produto">Milk Shake de Oreo</h3>
+                            <p class="descricao">Milk shake de Oreo cremoso e irresistível, preparado com sorvete, leite
+                                e pedaços crocantes do famoso biscoito.</p>
                             <div class="rodape">
-                                <span class="preco">R$ 13,90</span>
+                                <span class="preco">R$ 15,00</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
@@ -307,32 +115,60 @@
 
                 <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba4dba5?auto=format&fit=crop&w=900&q=80"
-                            alt="Chá Gelado">
+                        <img src="../static/img/sucos-naturais.jpg" alt="Chá Gelado">
                         <div class="card-body">
-                            <div class="categoria">Bebida</div>
-                            <h3 class="titulo-produto">Chá Gelado</h3>
+                            <div class="categoria">Bebidas</div>
+                            <h3 class="titulo-produto">Suco Natural</h3>
                             <p class="descricao">Refrescante e leve, perfeito para um momento tranquilo durante o dia.
                             </p>
                             <div class="rodape">
-                                <span class="preco">R$ 8,90</span>
+                                <span class="preco">R$ 5,00</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80"
-                            alt="Bolo de Chocolate">
+                        <img src="../static/img/refrigerentes.jpg" alt="Bolo de Chocolate">
                         <div class="card-body">
-                            <div class="categoria">Doce</div>
-                            <h3 class="titulo-produto">Bolo de Chocolate</h3>
-                            <p class="descricao">Macio, fofo e irresistível, com cobertura cremosa de chocolate
-                                derretido.</p>
+                            <div class="categoria">Bebidas</div>
+                            <h3 class="titulo-produto">Refrigerantes </h3>
+                            <p class="descricao">Ideal para refrescar o dia, com sabor intenso e duradouro.</p>
                             <div class="rodape">
-                                <span class="preco">R$ 14,90</span>
+                                <span class="preco">R$ 8,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                    <div class="card-produto">
+                        <img src="../static/img/cappuccino.jpg" alt="Bolo de Chocolate">
+                        <div class="card-body">
+                            <div class="categoria">Cafés</div>
+                            <h3 class="titulo-produto">Cappuccino </h3>
+                            <p class="descricao">Café cremoso e saboroso, perfeito para começar o dia com energia.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 6,90</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                    <div class="card-produto">
+                        <img src="../static/img/latte.jpg" alt="Bolo de Chocolate">
+                        <div class="card-body">
+                            <div class="categoria">Cafés</div>
+                            <h3 class="titulo-produto">Latte </h3>
+                            <p class="descricao">Latte cremoso e suave, preparado com café espresso e leite vaporizado,
+                                finalizado com uma delicada camada de espuma</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 6,90</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
@@ -341,12 +177,12 @@
 
                 <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1586985289688-cacf595b2571?auto=format&fit=crop&w=900&q=80"
-                            alt="Croissant">
+                        <img src="../static/img/bolo-de-cenoura.jpg" alt="Croissant">
                         <div class="card-body">
-                            <div class="categoria">Doce</div>
-                            <h3 class="titulo-produto">Croissant de Chocolate</h3>
-                            <p class="descricao">Crocante por fora e macio por dentro, com recheio de chocolate premium.
+                            <div class="categoria">Doces</div>
+                            <h3 class="titulo-produto">Bolo de Cenoura </h3>
+                            <p class="descricao">Bolo de cenoura fofinho e saboroso, coberto com uma camada cremosa de
+                                chocolate que deixa cada pedaço ainda mais irresistível.
                             </p>
                             <div class="rodape">
                                 <span class="preco">R$ 9,90</span>
@@ -356,32 +192,30 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 produto-item" data-category="comidas">
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=900&q=80"
-                            alt="Quiche">
+                        <img src="../static/img/dunuts.jpg" alt="Quiche">
                         <div class="card-body">
-                            <div class="categoria">Comida</div>
-                            <h3 class="titulo-produto">Quiche de Queijo</h3>
-                            <p class="descricao">Massa crocante com recheio de queijo e bacon, ideal para um almoço
-                                leve.</p>
+                            <div class="categoria">Doces</div>
+                            <h3 class="titulo-produto">Dunuts </h3>
+                            <p class="descricao">Donuts fofinhos e dourados, com massa leve e saborosa, cobertos com uma
+                                camada irresistível de açúcar, chocolate ou confeitos.</p>
                             <div class="rodape">
-                                <span class="preco">R$ 18,90</span>
+                                <span class="preco">R$ 12,90</span>
                                 <button class="btn-add">Adicionar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4 produto-item" data-category="comidas">
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
                     <div class="card-produto">
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
-                            alt="Sanduíche Natural">
+                        <img src="../static/img/sonho.jpg" alt="Sanduíche Natural">
                         <div class="card-body">
-                            <div class="categoria">Comida</div>
-                            <h3 class="titulo-produto">Sanduíche Natural</h3>
-                            <p class="descricao">Pão integral com queijo, presunto e vegetais frescos para uma opção
-                                leve e nutritiva.</p>
+                            <div class="categoria">Doces</div>
+                            <h3 class="titulo-produto">Sonho</h3>
+                            <p class="descricao">Sonho fofinho e dourado, recheado com um creme suave e irresistível,
+                                perfeito para adoçar qualquer momento</p>
                             <div class="rodape">
                                 <span class="preco">R$ 16,90</span>
                                 <button class="btn-add">Adicionar</button>
@@ -389,6 +223,313 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/misto-quente.jpg" alt="Sanduíche Natural">
+                        <div class="card-body">
+                            <div class="categoria">Salgado</div>
+                            <h3 class="titulo-produto">Misto Quente</h3>
+                            <p class="descricao">Misto quente saboroso, com pão torrado e recheio de queijo e presunto,
+                                perfeito para aquecer o coração em dias frios.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 12,00</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/Esfiha.jpg" alt="Sanduíche Natural">
+                        <div class="card-body">
+                            <div class="categoria">Salgado</div>
+                            <h3 class="titulo-produto">Esfiha</h3>
+                            <p class="descricao">Esfiha saborosa, com massa crocante e recheio delicioso,
+                                perfeita para degustar em qualquer horário.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 6,00</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/sanduiche-naturais.jpg" alt="Sanduíche Natural">
+                        <div class="card-body">
+                            <div class="categoria">Salgado</div>
+                            <h3 class="titulo-produto">Sanduíche Natural</h3>
+                            <p class="descricao">Sanduíche natural saboroso, com pão integral e recheio de vegetais,
+                                perfeito para uma refeição saudável.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 13,90</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
+                    <div class="card-produto">
+                        <img src="../static/img/pudim.jpg" alt="Pudim">
+                        <div class="card-body">
+                            <div class="categoria">Doce</div>
+                            <h3 class="titulo-produto">Pudim</h3>
+                            <p class="descricao">Pudim cremoso e saboroso, perfeito para acompanhar uma refeição ou como
+                                sobremesa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 15,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
+                    <div class="card-produto">
+                        <img src="../static/img/mousse.jpg" alt="Mousse">
+                        <div class="card-body">
+                            <div class="categoria">Doce</div>
+                            <h3 class="titulo-produto">Mousse</h3>
+                            <p class="descricao">Mousse deliciosa e leve, perfeita para acompanhar uma refeição ou como
+                                sobremesa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 13,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="doces">
+                    <div class="card-produto">
+                        <img src="../static/img/tortas-especiais.jpg" alt="Tortas Especiais">
+                        <div class="card-body">
+                            <div class="categoria">Doce</div>
+                            <h3 class="titulo-produto">Tortas Especiais</h3>
+                            <p class="descricao">Tortas especiais e deliciosas, perfeitas para acompanhar uma refeição
+                                ou como
+                                sobremesa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 16,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/tapioca.jpg" alt="Tapioca">
+                        <div class="card-body">
+                            <div class="categoria">Salgados</div>
+                            <h3 class="titulo-produto">Tapioca</h3>
+                            <p class="descricao">Tapioca deliciosa e leve, perfeita para acompanhar uma refeição ou como
+                                sobremesa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 12,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="bebidas">
+                    <div class="card-produto">
+                        <img src="../static/img/vinho.jpg" alt="Vinho">
+                        <div class="card-body">
+                            <div class="categoria">Bebidas</div>
+                            <h3 class="titulo-produto">Vinho</h3>
+                            <p class="descricao">Vinho aromático e saboroso, com notas equilibradas de frutas, corpo
+                                delicado e um final agradável que combina com diversos momentos.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 16,90</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/empada.jpg" alt="Empada">
+                        <div class="card-body">
+                            <div class="categoria">Salgados</div>
+                            <h3 class="titulo-produto">Empada</h3>
+                            <p class="descricao">Empada saborosa e caseira, perfeita para um lanche ou refeição leve.
+                            </p>
+                            <div class="rodape">
+                                <span class="preco">R$ 8,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="salgados">
+                    <div class="card-produto">
+                        <img src="../static/img/coxinha.jpg" alt="Coxinha">
+                        <div class="card-body">
+                            <div class="categoria">Salgados</div>
+                            <h3 class="titulo-produto">Coxinha</h3>
+                            <p class="descricao">Coxinha saborosa e caseira, perfeita para um lanche ou refeição leve.
+                            </p>
+                            <div class="rodape">
+                                <span class="preco">R$ 6,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                    <div class="card-produto">
+                        <img src="../static/img/cafe-com-leite.jpg" alt="Café com Leite">
+                        <div class="card-body">
+                            <div class="categoria">Café</div>
+                            <h3 class="titulo-produto">Café com Leite</h3>
+                            <p class="descricao">Café com leite saboroso e quente, perfeito para começar o dia com
+                                energia.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 4,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                    <div class="card-produto">
+                        <img src="../static/img/chas-variados.jpg" alt="Chás Variados">
+                        <div class="card-body">
+                            <div class="categoria">Café</div>
+                            <h3 class="titulo-produto">Chás Variados</h3>
+                            <p class="descricao">Chás variados saborosos e refrescantes, ideais para momentos de tranquilidade.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 9,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="cafes">
+                    <div class="card-produto">
+                        <img src="../static/img/capsula-de-cafe.jpg" alt="Cápsula de Café">
+                        <div class="card-body">
+                            <div class="categoria">Café</div>
+                            <h3 class="titulo-produto">Cápsula de Café</h3>
+                            <p class="descricao">Cápsula de café prática e saborosa, que prepara uma bebida aromática,
+                                encorpada e cremosa em poucos segundos.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 3,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas1.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 19,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas2.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 17,00</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas3.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 10,00</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas4.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 13,00</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas5.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 12,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 produto-item" data-category="presentes">
+                    <div class="card-produto">
+                        <img src="../static/img/canecas-personalizadas6.jpg" alt="Canecas Personalizadas">
+                        <div class="card-body">
+                            <div class="categoria">Canecas</div>
+                            <h3 class="titulo-produto">Canecas Personalizadas</h3>
+                            <p class="descricao">Canecas personalizadas com designs únicos, ideais para presentear ou
+                                usar em casa.</p>
+                            <div class="rodape">
+                                <span class="preco">R$ 15,50</span>
+                                <button class="btn-add">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
